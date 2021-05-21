@@ -1,0 +1,11 @@
+<h5 class="card-title"><%= @title %></h5>
+<p class="card-text"><%= @description %></p>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">提起者: <%= @name %></li>
+  <li class="list-group-item">目標: <%= @goal_price %>円　現在: <%= @now_price %>円<br>
+    <div class="progress mt-2">
+      <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <%= @progress %>%;" aria-valuenow="<%= @progress %>" aria-valuemin="0" aria-valuemax="100"><%= @progress %>%</div>
+    </div>
+  </li>
+  <li class="list-group-item">支援: <%= @campa_num %>件 　コメント: <%= @comment_num %>件</li>
+</ul>

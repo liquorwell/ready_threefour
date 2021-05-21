@@ -1,0 +1,28 @@
+<h2>カンパを募集する</h2>
+
+<form action="/create" method="post">
+  <%= csrf_tag %>
+  <div class="form-group my-4">
+    <label for="create-title">タイトル</label>
+    <input type="text" class="form-control" id="create-title" name="title">
+  </div>
+  <div class="form-group my-4">
+    <label for="create-name">提起者</label>
+    <input type="text" class="form-control" id="create-name" name="name">
+  </div>
+  <div class="form-group my-4">
+    <label for="create-price">目標金額</label>
+    <input type="number" class="form-control" id="create-price" name="price">
+  </div>
+  <div class="form-group my-4">
+    <label for="create-description">説明文</label>
+    <textarea class="form-control" id="create-description" name="description"></textarea>
+  </div>
+  <div class="form-group my-4">
+    <label for="create-pass">パスワード</label>
+    <input type="password" class="form-control" id="create-pass" name="pass">
+    <small id="create-pass-help" class="form-text text-muted"><%= @text %></small>
+  </div>
+  <a href="/" class="btn btn-secondary">キャンセル</a>
+  <button type="submit" class="btn btn-primary">募集する</button>
+</form>

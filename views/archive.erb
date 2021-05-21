@@ -1,0 +1,19 @@
+<h2>アーカイブ</h2>
+
+<% @contents.each do |content| %>
+  <% data_set(content) %>
+  <div class="card border-dark my-4">
+    <div class="card-body text-dark">
+      <%= erb :'card_body' %>
+    </div>
+    <div class="card-footer">
+      <div class="card-link-container">
+        <a href="./unarchive/<%= @id %>" class="card-link"><img src="icons/reply.svg" width="17" height="17">元に戻す</a>
+        <a href="./destroy/<%= @id %>" class="card-link"><img src="icons/trash.svg" width="17" height="17">削除</a>
+      </div>
+      <div class="card-date-container">
+        <p><%= @date %></p>
+      </div>
+    </div>
+  </div>
+<% end %>

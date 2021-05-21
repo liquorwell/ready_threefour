@@ -1,0 +1,38 @@
+<% data_set(@content) %>
+
+<h2>コメント</h2>
+
+<div class="card border-dark my-4">
+  <div class="card-body text-dark">
+    <%= erb :'card_body' %>
+  </div>
+</div>
+
+<div class="card my-4">
+  <div class="card-body text-dark">
+    <h5 class="card-title">コメント</h5>
+    <ul class="list-group list-group-flush">
+      <% if @content.comments.all.count != 0 %>
+        <% @content.comments.all.each do |comment| %>
+        <li class="list-group-item"><%= comment.name %>: <%= comment.comment %>　<span class="float-end"><%= comment.created.strftime("%Y-%m-%d") %></span></li>
+        <% end %>
+      <% else %>
+        <li class="list-group-item">コメントはありません</li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<form action="/comment/<%= @content.id %>" method="post">
+  <%= csrf_tag %>
+  <div class="form-group my-4">
+    <label for="comment-name">名前</label>
+    <input type="text" class="form-control" id="comment-name" name="name">
+  </div>
+  <div class="form-group my-4">
+    <label for="comment-text">コメント</label>
+    <textarea class="form-control" id="comment-text" name="comment"></textarea>
+  </div>
+  <a href="/" class="btn btn-secondary">キャンセル</a>
+  <button type="submit" class="btn btn-primary">コメントする</button>
+</form>

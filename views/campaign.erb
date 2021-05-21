@@ -1,0 +1,40 @@
+<% data_set(@content) %>
+
+<h2>カンパする</h2>
+
+<div class="card border-dark my-4">
+  <div class="card-body text-dark">
+    <%= erb :'card_body' %>
+  </div>
+</div>
+
+<div class="card my-4">
+  <div class="card-body text-dark">
+    <h5 class="card-title">支援者</h5>
+    <ul class="list-group list-group-flush">
+      <% if @content.campaigns.all.count != 0 %>
+        <% @content.campaigns.all.each do |campaign| %>
+        <li class="list-group-item" data-id="<%= campaign.id %>">
+          <%= campaign.name %>　<%= campaign.price %>円　
+        </li>
+        <% end %>
+      <% else %>
+        <li class="list-group-item">支援者はいません</li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<form action="/campaign/<%= @content.id %>" method="post">
+  <%= csrf_tag %>
+  <div class="form-group my-4">
+    <label for="campaign-name">名前</label>
+    <input type="text" class="form-control" id="campaign-name" name="name">
+  </div>
+  <div class="form-group my-4">
+    <label for="campaign-price">カンパ金額</label>
+    <input type="number" class="form-control" id="campaign-price" name="price">
+  </div>
+  <a href="/" class="btn btn-secondary">キャンセル</a>
+  <button type="submit" class="btn btn-primary">カンパする</button>
+</form>

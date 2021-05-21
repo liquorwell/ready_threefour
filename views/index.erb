@@ -1,0 +1,40 @@
+<h2>カンパを募集する</h2>
+<a href="./create" class="btn btn-success btn-lg">カンパを募集する</a>
+
+<h2>カンパ募集中リスト</h2>
+<form action="/" method="post">
+  <%= csrf_tag %>
+  <div class="row">
+    <div class="col">
+      <select class="form-control my-1" name="order" id="order">
+        <option value="default">未選択</option>
+        <option value="new">新しい順</option>
+        <option value="old">古い順</option>
+      </select>
+    </div>
+    <div class="col">
+      <button type="submit" class="btn btn-outline-info my-1" id="order-btn" disabled>並べ替え</button>
+    </div>
+  </div>
+</form>
+
+<% @contents.each do |content| %>
+  <% data_set(content) %>
+  <div class="card border-dark my-4">
+    <div class="card-body text-dark">
+      <%= erb :'card_body' %>
+      <a href="./campaign/<%= @id %>" class="btn btn-primary">カンパする</a>
+      <a href="./comment/<%= @id %>" class="btn btn-primary">コメント</a>
+    </div>
+    <div class="card-footer">
+      <div class="card-link-container">
+        <a href="./update/<%= @id %>" class="card-link"><img src="icons/pencil.svg" width="17" height="17">編集</a>
+        <a href="./destroy/<%= @id %>" class="card-link"><img src="icons/trash.svg" width="17" height="17">削除</a>
+        <a href="./archive/<%= @id %>" class="card-link"><img src="icons/archive.svg" width="17" height="17">アーカイブ</a>
+      </div>
+      <div class="card-date-container">
+        <p><%= @date %></p>
+      </div>
+    </div>
+  </div>
+<% end %>

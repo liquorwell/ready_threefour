@@ -1,0 +1,28 @@
+<h2>編集</h2>
+
+<form action="/update/<%= @content.id %>" method="post">
+  <%= csrf_tag %>
+  <div class="form-group my-4">
+    <label for="update-title">タイトル</label>
+    <input type="text" class="form-control" id="update-title" name="title" value="<%= @content.title %>">
+  </div>
+  <div class="form-group my-4">
+    <label for="update-name">提起者</label>
+    <input type="text" class="form-control" id="update-name" name="name" value="<%= @content.name %>">
+  </div>
+  <div class="form-group my-4">
+    <label for="update-price">目標金額</label>
+    <input type="number" class="form-control" id="update-price" name="price" value="<%= @content.price %>">
+  </div>
+  <div class="form-group my-4">
+    <label for="update-description">説明文</label>
+    <textarea class="form-control" id="update-description" name="description"><%= @content.description %></textarea>
+  </div>
+  <div class="form-group my-4">
+    <label for="update-pass">パスワード</label>
+    <input type="password" class="form-control" id="update-pass" name="pass">
+    <small id="update-pass-help" class="form-text text-muted"><%= @text %></small>
+  </div>
+  <a href="/" class="btn btn-secondary">キャンセル</a>
+  <button type="submit" class="btn btn-primary">更新する</button>
+</form>
