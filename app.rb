@@ -19,7 +19,7 @@ ActiveRecord::Base.establish_connection(
    host:     "",
    username: "testname",
    password: "testpass",
-   database: "test"
+   database: "readythreefour"
  )
 
 class Content < ActiveRecord::Base
