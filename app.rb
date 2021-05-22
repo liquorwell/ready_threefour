@@ -15,11 +15,11 @@ end
 
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 ActiveRecord::Base.establish_connection(
-  adapter:  "postgresql",
-   host:     "",
-   username: "testname",
-   password: "testpass",
-   database: "readythreefour"
+   adapter:  "postgresql",
+   host:     "ec2-3-233-7-12.compute-1.amazonaws.com",
+   username: "ybxdumpqxxggvz",
+   password: "74603d9a0e7ffd6c107c252f02c8519fa468beeae5bcda5a15a7b73e2178b71b",
+   database: "de1uarnvoq545g"
  )
 
 class Content < ActiveRecord::Base
