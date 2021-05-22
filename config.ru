@@ -1,2 +1,2 @@
-require './hoge'
+require './app'
 run Sinatra::Application
