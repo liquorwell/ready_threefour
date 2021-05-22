@@ -19,7 +19,7 @@ ActiveRecord::Base.establish_connection(
    host:     "ec2-3-233-7-12.compute-1.amazonaws.com",
    username: "ybxdumpqxxggvz",
    password: "74603d9a0e7ffd6c107c252f02c8519fa468beeae5bcda5a15a7b73e2178b71b",
-   database: "de1uarnvoq545g"
+   database: "postgresql-transparent-68500"
  )
 
 class Content < ActiveRecord::Base
