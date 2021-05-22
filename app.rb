@@ -92,13 +92,13 @@ get '/create' do
 end
 
 post '/create' do
-  # begin
+  begin
     Content.create!(title: params[:title], name: params[:name], price: params[:price], description: params[:description], pass: params[:pass])
     redirect to('/')
-  # rescue => error
-  #   @text = "エラー：すべてのフォームを入力してください！"
-  #   erb :create
-  # end
+  rescue => error
+    @text = "エラー：すべてのフォームを入力してください！"
+    erb :create
+  end
 end
 
 get '/update/:id/?:option?' do
