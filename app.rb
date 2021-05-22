@@ -15,9 +15,12 @@ end
 
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 ActiveRecord::Base.establish_connection(
-  adapter: 'sqlite3',
-  database: './database.db'
-)
+  adapter:  "postgresql",
+   host:     "",
+   username: "testname",
+   password: "testpass",
+   database: "test"
+ )
 
 class Content < ActiveRecord::Base
   has_many :campaigns, dependent: :destroy
