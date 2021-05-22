@@ -9,5 +9,6 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
   gem "sinatra-contrib"
   gem "activerecord"
   gem "logger"
+  gem 'rack_csrf'
   gem 'sqlite3', group: :development
   gem 'pg', group: :production
